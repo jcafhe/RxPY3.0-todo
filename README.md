@@ -1,17 +1,17 @@
 # RxPY3.0-todo-tracker
 
-# Remove result_mapper in rx/__init__.py :
+## Removing result_mapper arg in operators
 
-|operator|
-|... |
-|for_in|
-|generate_with_relative_time|
-|generate|
-|zip|
+### Remove result_mapper in rx/__init__.py :
 
-# Remove result_mapper in rx/operators/__init__.py :
-- group_join
-- join
-- zip
-- zip_with_iterable
+- [ ] for_in
+- [ ] generate_with_relative_time
+- [ ] generate
+- [ ] zip
+
+### Remove result_mapper in rx/operators/__init__.py :
+- [ ] group_join
+- [ ] join
+- [ ] zip
+- [ ] zip_with_iterable
 
