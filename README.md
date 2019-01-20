@@ -6,7 +6,7 @@
 
 - [ ] for_in
 - [ ] generate_with_relative_time
-- [ ] generate
+- [x] generate
 - [ ] zip
 
 ### Remove result_mapper in rx/operators/__init__.py :
