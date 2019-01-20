@@ -5,7 +5,7 @@
 ### Remove result_mapper in rx/__init__.py :
 
 - [ ] for_in
-- [ ] generate_with_relative_time
+- [x] generate_with_relative_time
 - [x] generate
 - [ ] zip
 
