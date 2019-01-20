@@ -7,11 +7,11 @@
 - [ ] for_in
 - [x] generate_with_relative_time
 - [x] generate
-- [ ] zip
+- [X] zip
 
 ### Remove result_mapper in rx/operators/__init__.py :
 - [ ] group_join
 - [ ] join
-- [ ] zip
+- [X] zip
 - [ ] zip_with_iterable
 
