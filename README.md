@@ -13,5 +13,5 @@
 - [ ] group_join
 - [ ] join
 - [X] zip
-- [ ] zip_with_iterable
+- [x] zip_with_iterable
 
