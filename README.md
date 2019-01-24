@@ -1,7 +1,7 @@
 
 ### Before
 
-| ObservableBase  | AnonymousObservable | BlockingObservable  | GroupedObservable | ConnectableObservable | 
+|Observable<br><typing.Observable>|AnonymousObservable<br><ObservableBase>|BlockingObservable<br><typing.Observable>|GroupedObservable<br><ObservableBase>|ConnectableObservable<br><ObservableBase>| 
 |---------------  |-------------------  |-------------------  |-----------------  |---------------------  | 
 | \_\_await__     |                     |                     |                   |                       | 
 | \_\_add__       |                     |                     |                   |                       | 
@@ -25,7 +25,7 @@
 
 ### After
 
-| ObservableBase  | Observable  | AnonymousObservable | BlockingObservable | GroupedObservable | ConnectableObservable |  | 
+| ObservableBase<br><typing.Observable>| Observable<br><ObservableBase>|AnonymousObservable<br><ObservableBase>|BlockingObservable<br><ObservableBase>|GroupedObservable<br><ObservableBase>| ConnectableObservable<br><ObservableBase>|  | 
 |-----------------|-------------|---------------------|--------------------|-------------------|-----------------------|--| 
 |                 | \_\_await__ |                     |                    |                   |                       |  | 
 |                 | \_\_add__   |                     |                    |                   |                       |  | 
