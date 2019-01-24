@@ -25,6 +25,7 @@
 
 ### After
 - Remove first, firt_or_default, ... from BlockingObservable
+- Subclass ObservableBase for BlockingObservable ?
 - Create Observable class
 - Transfer magic methods from ObservableBase to Observable
 
