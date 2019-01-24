@@ -24,8 +24,12 @@
 |                 |                     | to_iterable         |                   |                       | 
 
 ### After
+- Remove first, firt_or_default, ... from BlockingObservable
+- Create Observable class
+- Transfer magic methods from ObservableBase to Observable
 
-| *ObservableBase*<br>typing.Observable|*Observable*<br>ObservableBase|*AnonymousObservable*<br>ObservableBase|*BlockingObservable*<br>ObservableBase|*GroupedObservable*<br>ObservableBase|*ConnectableObservable*<br>ObservableBase|  | 
+
+| *ObservableBase*<br>typing.Observable|*Observable*<br>ObservableBase|*AnonymousObservable*<br>ObservableBase|*BlockingObservable*<br>ObservableBase|*GroupedObservable*<br>ObservableBase|*ConnectableObservable*<br>ObservableBase| 
 |-----------------|-------------|---------------------|--------------------|-------------------|-----------------------|
 |                 | \_\_await__ |                     |                    |                   |                       |
 |                 | \_\_add__   |                     |                    |                   |                       |
