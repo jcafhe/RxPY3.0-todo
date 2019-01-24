@@ -26,16 +26,16 @@
 ### After
 
 | *ObservableBase*<br>typing.Observable|*Observable*<br>ObservableBase|*AnonymousObservable*<br>ObservableBase|*BlockingObservable*<br>ObservableBase|*GroupedObservable*<br>ObservableBase|*ConnectableObservable*<br>ObservableBase|  | 
-|-----------------|-------------|---------------------|--------------------|-------------------|-----------------------|--| 
-|                 | \_\_await__ |                     |                    |                   |                       |  | 
-|                 | \_\_add__   |                     |                    |                   |                       |  | 
-|                 | \_\_iadd__  |                     |                    |                   |                       |  | 
-|                 | \_\_getitem__ |                   |                    |                   |                       |  | 
-|                 |             |                     | \_\_iter__           |                   |                       |  | 
-|                 |             |                     |                    |                   |                       |  | 
-| _subscribe_core |             | _subscribe_core     |                    | _subscribe_core   | _subscribe_core       |  | 
-| subscribe_      |             |                     | subscribe_         |                   |                       |  | 
-| subscribe       |             |                     | subscribe          | subscribe         |                       |  | 
-| pipe            |             |                     |                    |                   |                       |  | 
-|                 |             |                     |                    |                   | connect               |  | 
-|                 |             |                     |                    |                   | auto_connect          |  | 
+|-----------------|-------------|---------------------|--------------------|-------------------|-----------------------|
+|                 | \_\_await__ |                     |                    |                   |                       |
+|                 | \_\_add__   |                     |                    |                   |                       |
+|                 | \_\_iadd__  |                     |                    |                   |                       |
+|                 | \_\_getitem__ |                   |                    |                   |                       |
+|                 |             |                     | \_\_iter__         |                   |                       |
+|                 |             |                     |                    |                   |                       |
+| _subscribe_core |             | _subscribe_core     |                    | _subscribe_core   | _subscribe_core       |
+| subscribe_      |             |                     | subscribe_         |                   |                       |
+| subscribe       |             |                     | subscribe          | subscribe         |                       |
+| pipe            |             |                     |                    |                   |                       |
+|                 |             |                     |                    |                   | connect               |
+|                 |             |                     |                    |                   | auto_connect          |
