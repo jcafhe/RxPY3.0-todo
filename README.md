@@ -1,7 +1,7 @@
 
 ### Before
 
-|Observable<br><typing.Observable>|AnonymousObservable<br><ObservableBase>|BlockingObservable<br><typing.Observable>|GroupedObservable<br><ObservableBase>|ConnectableObservable<br><ObservableBase>| 
+|*Observable*<br>typing.Observable|*AnonymousObservable*<br>ObservableBase|*BlockingObservable*<br>typing.Observable|*GroupedObservable*<br>ObservableBase|*ConnectableObservable*<br>ObservableBase| 
 |---------------  |-------------------  |-------------------  |-----------------  |---------------------  | 
 | \_\_await__     |                     |                     |                   |                       | 
 | \_\_add__       |                     |                     |                   |                       | 
@@ -25,7 +25,7 @@
 
 ### After
 
-| ObservableBase<br><typing.Observable>| Observable<br><ObservableBase>|AnonymousObservable<br><ObservableBase>|BlockingObservable<br><ObservableBase>|GroupedObservable<br><ObservableBase>| ConnectableObservable<br><ObservableBase>|  | 
+| *ObservableBase*<br>typing.Observable|*Observable*<br>ObservableBase|*AnonymousObservable*<br>ObservableBase|*BlockingObservable*<br>ObservableBase|*GroupedObservable*<br>ObservableBase|*ConnectableObservable*<br>ObservableBase|  | 
 |-----------------|-------------|---------------------|--------------------|-------------------|-----------------------|--| 
 |                 | \_\_await__ |                     |                    |                   |                       |  | 
 |                 | \_\_add__   |                     |                    |                   |                       |  | 
