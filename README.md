@@ -15,6 +15,7 @@
 | pipe            |                     |                     |                   |                       | 
 |                 |                     |                     |                   | connect               | 
 |                 |                     |                     |                   | auto_connect          | 
+|                 |                     |                     |                   |                       | 
 |                 |                     | first               |                   |                       | 
 |                 |                     | first_or_default    |                   |                       | 
 |                 |                     | for_each            |                   |                       | 
