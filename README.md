@@ -1,7 +1,7 @@
 
 ### Before
 
-|*Observable*<br>typing.Observable|*AnonymousObservable*<br>ObservableBase|*BlockingObservable*<br>typing.Observable|*GroupedObservable*<br>ObservableBase|*ConnectableObservable*<br>ObservableBase| 
+|*ObservableBase*<br>typing.Observable|*AnonymousObservable*<br>ObservableBase|*BlockingObservable*<br>typing.Observable|*GroupedObservable*<br>ObservableBase|*ConnectableObservable*<br>ObservableBase| 
 |---------------  |-------------------  |-------------------  |-----------------  |---------------------  | 
 | \_\_await__     |                     |                     |                   |                       | 
 | \_\_add__       |                     |                     |                   |                       | 
