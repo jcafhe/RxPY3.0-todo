@@ -13,4 +13,5 @@ based on ReactiveTest created, subscribed, disposed.
 
 # New API
 ### MarbleScheduler
-- accept MarbleObservable with subscription/unsubcribe informations.
+- accept MarbleObservable 
+- subscribe/dispose timings are provided by MarbleObservale.
