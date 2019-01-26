@@ -1,12 +1,12 @@
 
-### conccurency/VirtualTimeScheduler 
+### conccurency.virtualtimescheduler.VirtualTimeScheduler 
 - **clock**: initial clock value and absolute time comparer
 
-### testing/ReactiveTest
+### testing.reactivetest.ReactiveTest
 - **created**: 200
 - **subscribed** = 200
 - **disposed** = 1000
 
-### testing/TestScheduler
+### testing.tetscheduler.TestScheduler
 
 based on ReactiveTest created, subscribed, disposed.
