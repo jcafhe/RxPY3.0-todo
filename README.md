@@ -1,12 +1,12 @@
 
-### conccurency.virtualtimescheduler.VirtualTimeScheduler 
+### VirtualTimeScheduler [conccurency.virtualtimescheduler](https://github.com/ReactiveX/RxPY/blob/master/rx/concurrency/virtualtimescheduler.py)
 - **clock**: initial clock value and absolute time comparer
 
-### testing.reactivetest.ReactiveTest
+### ReactiveTest [testing.reactivetest](https://github.com/ReactiveX/RxPY/blob/master/rx/testing/reactivetest.py)
 - **created**: 200
 - **subscribed** = 200
 - **disposed** = 1000
 
-### testing.tetscheduler.TestScheduler
+### TestScheduler [testing.testcheduler](https://github.com/ReactiveX/RxPY/blob/master/rx/testing/testscheduler.py)
 
 based on ReactiveTest created, subscribed, disposed.
