@@ -28,5 +28,5 @@ based on ReactiveTest created, subscribed, disposed.
 
 - add `^` as the subscription symbol. Each items that have been declared before subscription will have negative time. `a-^--b--` will produce `a` at -2 ticks, `b` at 3 ticks.
 
-
+- add a parse function
 
