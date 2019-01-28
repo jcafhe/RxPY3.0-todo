@@ -3,7 +3,7 @@
 ## breaking changes
 - each character will be interpreted as a marble (except for special characters). E.g. `-abc-` will be interpreted as 3 consecutive marbles `a`, `b`, `c`, instead of one marble `abc`.
 
-- each character advance time by one tick (except for space), e.g. `-ab-c--` will produce `a` at 1 tick, `b` at 2 tick, `c` at 4 tick instead of `ab` at 1 tick, `c` at **3** ticks.
+- each character advance time by one tick (except for space), e.g. `-ab-c--` will produce `a` at 1 tick, `b` at 2 tick, **`c` at 4 tick** instead of `ab` at 1 tick, **`c` at 3 tick**.
 
 - change error symbol from `x` or `X` to `#`
 
