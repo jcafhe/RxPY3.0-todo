@@ -13,7 +13,7 @@ In the following, "ts" stands for timespan. E.g. 3ts = 3 * timespan.
 
 - add support for grouping marbles e.g. `--(bc)-d-`. Every marble in a group share the same timestamp defined by the first `(`. Each character (even parentheses) advance time by 1ts. `b` and `c` will be produced at 2ts, `d` at 7ts.
 
-- add optional *lookup* dictionnary to convert a marble to the specified value. E.g. `from_marbles('a-b--', lookup={a:11, b:22}` will produce `11` at 0 and `22` at 2 * timespan.
+- add optional *lookup* dictionnary to convert a marble to the specified value. E.g. `from_marbles("a-b--", lookup={'a':11, 'b':22}` will produce `11` at 0 and `22` at 2 * timespan.
 
 - add optional *error* parameter to specify the exception raised by `#` marble.
 
