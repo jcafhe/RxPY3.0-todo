@@ -19,22 +19,27 @@
 
 
 # new fuctions
-## parse()
-Convert a string to a list of records (Recorded). The optional *time_shift* parameter allow to set the subscription time. This will set the time for `^` marble if specified, else for the first character in the diagram (except for space). 
+## `parse(string, [timespan, lookup, error, time_shift]) -> List[Recorded]`
+Convert a string to a list of records (Recorded). The optional *time_shift* parameter allows to set the subscription time. This will set the time for `^` marble if specified, otherwise for the first character in the diagram (except for space). 
 
-## test_context(timespan)
-Setup a TestScheduler and returns the functions below as a namedtuple. This unsures that everything will be called with the same values for parameters subscribed, created, disposed, timespan.
+## `test_context(timespan)`
+Setup a TestScheduler and returns the functions below as a namedtuple. This unsures that everything will be called with the same values for the following parameters: subscribed, created, disposed, timespan. parameters are set to:
+- created = 100
+- subscribed = 190
+- disposed = 1000
 
-### cold(string, lookup, error)
+Regarding `hot()` and `exp()` functions, the timings are shifted by +10 to unsure that the first character will not be skipped (a bit of a hack). So the first character will have a timestamp of 190 + 10 = 200.
+
+### `cold(string, [lookup, error]) -> Observable`
 Parse a marbles string and return a cold observable by wraping `TestScheduler.create_cold_observable()`.
 
-### hot(string, lookup, error)
+### `hot(string, lookup, error) -> Observable`
 Parse a marbles string and return a hot observable by wraping `TestScheduler.create_hot_observable()`.
 
-### start(create | observable)
-Wrapper around `TestScheduler.start()`.
+### `start(create | observable) -> List[Recorded]`
+Wrapper around `TestScheduler.start()`. Returns a list of records instead of a MockObserver.
 
-### exp(string, lookup, error)
+### `exp(string, [lookup, error]) -> List[Recorded]`
 Parse a marbles string and return a list of records.
 
 
