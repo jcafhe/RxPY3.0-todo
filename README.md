@@ -1,5 +1,5 @@
 
-# Marbles diagram
+# Marbles syntax
 ## breaking changes
 - each character will be interpreted as a marble (except for special characters). E.g. `-abc-` will be interpreted as 3 consecutives marbles `a`, `b`, `c`, instead of one marble `abc`.
 
@@ -18,7 +18,7 @@
 - add `^` as the subscription symbol. If subscription time is 0, each marble that has been declared before subscription will have negative relative time. `a-^--b--` will produce `a` at -2 ticks, `b` at 3 ticks. This should only be used in `hot()` function.
 
 
-# new fuctions
+# New functions
 ## `parse(string, [timespan, lookup, error, time_shift]) -> List[Recorded]`
 Convert a string to a list of records (Recorded). The optional *time_shift* parameter allows to set the subscription time. This will set the time for `^` marble if specified, otherwise for the first character in the diagram (except for space). 
 
@@ -28,12 +28,12 @@ Setup a TestScheduler and returns the functions below as a namedtuple. This unsu
 - subscribed = 190
 - disposed = 1000
 
-Regarding `hot()` and `exp()` functions, the timings are shifted by +10 to unsure that the first character will not be skipped (a bit of a hack). So the first character will have a timestamp of 190 + 10 = 200.
+Regarding `hot()` and `exp()` functions, the timings are shifted by +10 to unsure that the first character will not be skipped by the scheduler (a bit of a hack). So the first character will have a timestamp of 190 + 10 = 200.
 
 ### `cold(string, [lookup, error]) -> Observable`
 Parse a marbles string and return a cold observable by wraping `TestScheduler.create_cold_observable()`.
 
-### `hot(string, lookup, error) -> Observable`
+### `hot(string, [lookup, error]) -> Observable`
 Parse a marbles string and return a hot observable by wraping `TestScheduler.create_hot_observable()`.
 
 ### `start(create | observable) -> List[Recorded]`
