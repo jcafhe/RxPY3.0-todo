@@ -22,19 +22,19 @@
 ## parse()
 Convert a string to a list of records (Recorded). The optional *time_shift* parameter allow to set the subscription time. This will set the time for `^` marble if specified, else for the first character in the diagram (except for space). 
 
-## test_context()
-Setup a TestScheduler and returns the functions below:
+## test_context(timespan)
+Setup a TestScheduler and returns the functions below as a namedtuple. This unsures that everything will be called with the same values for parameters subscribed, created, disposed, timespan.
 
-### cold()
+### cold(string, lookup, error)
 Parse a marbles string and return a cold observable by wraping `TestScheduler.create_cold_observable()`.
 
-### hot()
+### hot(string, lookup, error)
 Parse a marbles string and return a hot observable by wraping `TestScheduler.create_hot_observable()`.
 
-### start()
+### start(create | observable)
 Wrapper around `TestScheduler.start()`.
 
-### exp()
+### exp(string, lookup, error)
 Parse a marbles string and return a list of records.
 
 
