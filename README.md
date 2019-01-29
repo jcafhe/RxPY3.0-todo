@@ -27,10 +27,10 @@ Convert a string to a list of records (Recorded). The optional *time_shift* para
 ## `test_context(timespan)`
 Setup a TestScheduler and returns the functions below as a namedtuple. This unsures that everything will be called with the same values for the following parameters: subscribed, created, disposed, timespan. Parameters are set to:
 - created = 100
-- subscribed = 190
+- subscribed = 200
 - disposed = 1000
 
-Regarding `hot()` and `exp()` functions, the timings are shifted by +10ts to unsure that the first character will not be skipped by the scheduler (a bit of a hack). So the first character will have a timestamp of 190 + 10 = 200.
+Regarding `hot()` function, if a marble is specified as the first character, it will be skipped.
 
 ### `cold(string, [lookup, error]) -> Observable`
 Parse a marbles string and return a cold observable by calling `TestScheduler.create_cold_observable()`.
