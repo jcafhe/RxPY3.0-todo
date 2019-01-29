@@ -30,7 +30,7 @@ Setup a TestScheduler and returns the functions below as a namedtuple. This unsu
 - subscribed = 200
 - disposed = 1000
 
-Regarding `hot()` function, if a marble is specified as the first character, it will be skipped.
+Regarding `hot()` function, if a marble is specified as the **first character**, it will be **skipped**.
 
 ### `cold(string, [lookup, error]) -> Observable`
 Parse a marbles string and return a cold observable by calling `TestScheduler.create_cold_observable()`.
