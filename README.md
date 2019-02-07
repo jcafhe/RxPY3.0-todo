@@ -1,4 +1,4 @@
-# retry
+# catch
 ## dependencies:
 
 - retry <- rx.catch
