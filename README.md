@@ -1,4 +1,14 @@
-## dependencies concat:
+# retry
+## dependencies:
+
+- retry <- rx.catch
+
+## relying on iterator
+- __retry__ <- rx.catch
+
+
+# concat
+## dependencies:
 
 test_windowwithtime <- operators.concat
 
