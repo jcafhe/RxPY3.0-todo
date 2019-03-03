@@ -1,13 +1,30 @@
-# Explored fixs
-## remove `self._timers`
-In theory, there should be no need to keep reference to QTimer object since a reference is captured anyway in the local `dispose` function. 
-However, a problem arises when user doesn't hold a reference to the disposable returned by `subscribe` method, as seen in tests.
-For whatever reason, the timer will never fire `timeout` signal and the action will not be invoked for non-periodic scheduling.
-E.g. `>>> disp = schedule.shedule_relative(1.0, action, state)` would work, but `>>> schedule.shedule_relative(1.0, action, state)` wouldn't.
 
-## use static method `QTimer.singleShot` for non periodic scheduling
-This is the cleaner fix since we don't need to manage QTimer lifetime. We still keep reference to periodic QTimers because it make sense to tight QTimer lifetime to the `disposable` returned by `subscribe` method.
-However, `QTimer.singleShot(int:msec, Functor:functor)` overload is only available in QT5.4 according to Qt documentation.
-- QT5: https://doc.qt.io/qt-5/qtimer.html#singleShot-4
-- QT4.8: https://doc.qt.io/archives/qt-4.8/qtimer.html#singleShot
+## Issue
+Actually, for non-periodic scheduling, we keep reference to QTimer objects and remove them on dispose. This is a problem because the QTimer objects are accumulated in the set and never removed if `dispose` is not called.
+It can be easily demonstrated in the timeflies examples. Just add a print statement to display the length of the set on mouse move:
+```python
+def on_next(info):
+    label, (x, y), i = info
+    label.move(x + i*12 + 15, y)
+    print(len(scheduler._timers))
+    label.show()
+```
+See full example https://gist.github.com/jcafhe/9295d50e7f98b9b834d4b70c129caaa5.js
+
+## Fix
+In theory, there should be no need to keep reference to QTimer objects since a reference is captured anyway in the local `dispose` function. 
+
+However, a problem arises when one use directly sheduling method (`shedule`, `schedule_relative`, ...) and doesn't keep a reference to the returned disposable, as seen in tests.
+
+For whatever reason, the timer will never fire `timeout` signal and the action will not be invoked. E.g.:
+- `>>> disp = schedule.shedule_relative(1.0, action, state)` would work
+- `>>> schedule.shedule_relative(1.0, action, state)` wouldn't.
+
+By using `QTimer.singleShot` static method, we don't need to manage QTimer lifetime for non-periodic scheduling. The drawback is that we can't stop the timer to cancel the action before it is invoked. Thus, the action will be cancelled at invocation time.
+
+For periodic scheduling, we still construct a Qtimer object and keep a reference in a set. This `QTimer` is only delete on dispose, since IMO it makes sense to tight periodic timer lifetime to the returned `disposable`.
+
+
+
+
 
