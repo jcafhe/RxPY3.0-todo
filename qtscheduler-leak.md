@@ -1,7 +1,7 @@
 
 ## Issue
-Actually, for non-periodic scheduling, we keep references to QTimer objects and remove them on dispose. This is a problem because the QTimer objects are accumulated in the set and never removed if `dispose` is not called.
-It can be easily demonstrated in the timeflies examples. Just add a print statement to display the length of the set on mouse move:
+Actually, we keep references to QTimer objects in a set and remove them on dispose. This is a problem for non-periodic scheduling because the QTimer objects are accumulated in the set and never removed if `dispose` is not called.
+It can be easily demonstrated with the timeflies examples. Just add a print statement to display the length of the set on mouse move:
 ```python
 def on_next(info):
     label, (x, y), i = info
