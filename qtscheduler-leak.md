@@ -9,7 +9,8 @@ def on_next(info):
     print(len(scheduler._timers))
     label.show()
 ```
-See full example https://gist.github.com/jcafhe/9295d50e7f98b9b834d4b70c129caaa5.js
+See full example
+<script src="https://gist.github.com/jcafhe/9295d50e7f98b9b834d4b70c129caaa5.js"></script>
 
 ## Fix
 In theory, there should be no need to keep reference to QTimer objects since a reference is captured anyway in the local `dispose` function. 
@@ -20,9 +21,11 @@ For whatever reason, the timer will never fire `timeout` signal and the action w
 - `>>> disp = schedule.shedule_relative(1.0, action, state)` would work
 - `>>> schedule.shedule_relative(1.0, action, state)` wouldn't.
 
-By using `QTimer.singleShot` static method, we don't need to manage QTimer lifetime for non-periodic scheduling. The drawback is that we can't stop the timer to cancel the action before it is invoked. Thus, the action will be cancelled at invocation time.
+By using `QTimer.singleShot` static method, we don't need to manage QTimer lifetime for non-periodic scheduling. 
 
-For periodic scheduling, we still construct a Qtimer object and keep a reference in a set. This `QTimer` is only delete on dispose, since IMO it makes sense to tight periodic timer lifetime to the returned `disposable`.
+**drawback**: we can't stop the timer to cancel the action before it is invoked. Thus, the action will be cancelled at invocation time. If you think this is not acceptable, I've come to an other solution relying on manual destruction of QTimer object, but it's a big 'ugly'. Please feel free to share your thoughts about that.
+
+For periodic scheduling, we still construct a Qtimer object and keep a reference in a set. Periodic timers will only be deleted on dispose. IMO it makes sense to tight periodic timer lifetime to the returned `disposable`.
 
 
 
